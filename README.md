@@ -1,2 +1,3 @@
-# snowflake-sql
-For my Udemy course "Advanced Snowflake SQL"
+# Snowflake SQL
+
+All demo source code for my Udemy course **Advanced Snowflake SQL**.
