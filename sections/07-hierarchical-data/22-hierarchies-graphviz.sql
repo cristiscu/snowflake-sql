@@ -1,13 +1,12 @@
 use schema employees.public;
 
--- adapt to http://magjac.com/graphviz-visual-editor/
-
 -- variable-depth hierarchy: employee --> manager
 create or replace view employee_manager as
     select e.name as employee, m.name as manager 
     from emp e left join emp m on e.mgr_id = m.emp_id;
 
-select '"' || manager || '" -> "' || employee || '"' as hierarchy
+-- paste result to http://magjac.com/graphviz-visual-editor/
+select '"' || manager || '" -> "' || employee || '"' as link
 from employee_manager;
 
 /*
@@ -30,6 +29,7 @@ digraph {
 */
 
 -- fixed-depth hierarchy: company --> departments --> employees
+-- paste result to http://magjac.com/graphviz-visual-editor/
 create or replace view department_employees as
     select '(company)' as child, null as parent
     union

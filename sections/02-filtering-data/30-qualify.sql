@@ -1,6 +1,6 @@
 use schema employees.public;
 
--- this will also fail
+-- this will fail
 select name, salary,
     row_number() over (order by salary desc) as rn
 from emp
