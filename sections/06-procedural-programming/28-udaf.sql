@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- SUM: w/ single parameter
 CREATE OR REPLACE AGGREGATE FUNCTION sum2(a FLOAT)

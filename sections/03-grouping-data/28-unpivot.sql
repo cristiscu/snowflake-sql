@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 create or replace view pivot_by_job_status as
     select *

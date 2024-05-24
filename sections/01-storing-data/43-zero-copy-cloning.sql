@@ -1,5 +1,5 @@
 -- select test database and schema
-use schema employees.public;
+use schema test.employees;
 
 select * from dept;
 

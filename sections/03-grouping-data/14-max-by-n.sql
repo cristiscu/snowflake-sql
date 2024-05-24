@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- top 3 employees with biggest salaries per department
 select dept_id, max_by(name, salary, 3) as names

@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- recursive CTE
 -- https://docs.snowflake.com/en/sql-reference/constructs/with#recursive-clause

@@ -1,5 +1,5 @@
- # add to new Python Worksheet
-# set warehouse + employees.public
+# add to new Python Worksheet
+# set warehouse + test.employees
 # add faker as package
 import snowflake.snowpark as snowpark
 from faker import Faker

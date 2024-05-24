@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 create or replace procedure gen_fake_rows(num_rows int)
     returns Table()

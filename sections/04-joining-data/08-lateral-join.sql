@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- no Operations!
 SELECT dept.name as department, e.name as employee

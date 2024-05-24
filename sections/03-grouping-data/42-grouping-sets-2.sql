@@ -1,4 +1,4 @@
-using schema employees.public;
+use schema test.employees;
 
 -- GROUP BY ALL
 select status, gender, sum(salary)

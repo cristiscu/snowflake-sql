@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- aggregate (create array of employee names, denormalized)
 create or replace view dept_with_emps as

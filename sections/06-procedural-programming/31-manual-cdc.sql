@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- source (table) --> target (table), w/ MERGE in stored proc
 CREATE OR REPLACE TABLE cust_source(del BOOLEAN, id INT, name STRING);

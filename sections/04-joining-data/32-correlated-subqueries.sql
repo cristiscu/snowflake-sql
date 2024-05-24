@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- in SELECT: get hired date of the employee hired after each employee in the same department
 SELECT dept_id, name, hire_date, salary, (

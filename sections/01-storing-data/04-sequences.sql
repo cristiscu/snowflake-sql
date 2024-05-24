@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- sequences
 -- see https://docs.snowflake.com/en/user-guide/querying-sequences

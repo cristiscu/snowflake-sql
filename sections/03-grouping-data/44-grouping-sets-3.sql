@@ -1,4 +1,4 @@
-using schema employees.public;
+use schema test.employees;
 
 -- GROUPING SETS
 select dept_id,

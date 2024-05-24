@@ -1,4 +1,4 @@
-using employees.public;
+use schema test.employees;
 
 SELECT status, sum(salary) as salaries
 FROM emp

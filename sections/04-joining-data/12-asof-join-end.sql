@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- assign project that will end sooner at the hire date
 SELECT emp.name as employee, hire_date,

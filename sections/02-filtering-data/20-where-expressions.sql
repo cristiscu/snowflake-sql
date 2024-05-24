@@ -1,5 +1,5 @@
 -- test w/ MySQL at https://www.db-fiddle.com/
-use schema employees.public;
+use schema test.employees;
 
 CREATE TABLE products (id INT, name VARCHAR(100));
 INSERT INTO products VALUES (1, 'soap'), (2, 'candles'), (3, 'niddles');

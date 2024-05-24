@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- w/o distinct job titles
 select job, "'divorced'", "'married'", "'single'"

@@ -1,5 +1,5 @@
 -- see https://www.linkedin.com/posts/anton-revyako_snowflake-sql-activity-7193593986303873025-2eVs/?utm_source=share&utm_medium=member_desktop
-use schema employees.public;
+use schema test.employees;
 
 select *
 from dept

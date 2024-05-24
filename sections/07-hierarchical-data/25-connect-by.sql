@@ -1,4 +1,4 @@
-use schema employees.public;
+use schema test.employees;
 
 -- 4-level hierarchy (w/ joins)
 -- https://docs.snowflake.com/en/user-guide/queries-hierarchical

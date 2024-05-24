@@ -1,5 +1,5 @@
-create or replace database employees;
-use schema employees.public;
+create or replace database test;
+use schema test.employees;
 
 create table dept (
 	dept_id     integer,
