@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- see https://docs.snowflake.com/en/sql-reference/sql/insert-multi-table
 -- recreate tables w/ LIKE

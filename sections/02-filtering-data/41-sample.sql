@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- 10 rows from small table
 select * from emp;

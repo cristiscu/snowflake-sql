@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- top employee with biggest salary per department
 select dept_id, name, salary

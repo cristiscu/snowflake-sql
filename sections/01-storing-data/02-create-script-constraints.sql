@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 create or replace table dept (
 	dept_id     integer     PRIMARY KEY,

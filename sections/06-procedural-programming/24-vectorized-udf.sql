@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- scalar UDFs (in SQL/JavaScript/Python)
 create or replace function add_bonus_sql(salary float, bonus float)

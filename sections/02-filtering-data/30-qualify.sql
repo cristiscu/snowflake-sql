@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- this will fail
 select name, salary,

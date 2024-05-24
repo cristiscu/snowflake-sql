@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 select salary, commission,
     greatest(salary, commission) as g

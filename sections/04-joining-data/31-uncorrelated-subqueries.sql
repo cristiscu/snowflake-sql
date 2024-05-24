@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- in SELECT
 SELECT (SELECT count(*) FROM emp);

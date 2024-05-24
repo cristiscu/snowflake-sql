@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 select * from dept;
 update dept set name = 'accounting' where name = 'Research';

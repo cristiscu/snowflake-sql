@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- variable-depth hierarchy: employee --> manager
 create or replace view employee_manager as

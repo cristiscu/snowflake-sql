@@ -1,5 +1,5 @@
 create or replace database test;
-use schema test.employees;
+use test.employees;
 
 create table dept (
 	dept_id     integer,

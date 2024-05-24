@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- duplicate rows
 select distinct e1.name, e1.job

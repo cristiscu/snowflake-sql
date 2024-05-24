@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- UDTF in SQL
 CREATE OR REPLACE FUNCTION get_employee_names(DID int)

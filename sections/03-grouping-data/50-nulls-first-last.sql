@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 select commission, name
 from emp

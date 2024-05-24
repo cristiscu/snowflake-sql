@@ -1,5 +1,5 @@
 -- see https://docs.snowflake.com/en/sql-reference/sql/delete
-use schema test.employees;
+use test.employees;
 
 select * from dept;
 

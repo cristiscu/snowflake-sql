@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- subqueries
 select ee.dept_id,

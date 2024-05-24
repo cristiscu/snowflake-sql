@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- count of employees with and without commision, per job title
 select job,

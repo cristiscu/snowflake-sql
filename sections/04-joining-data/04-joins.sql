@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- cross/inner joins
 SELECT dept.name as dept, emp.name as emp

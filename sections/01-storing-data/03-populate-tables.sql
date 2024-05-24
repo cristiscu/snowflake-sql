@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- populate DEPT table
 insert into dept values

@@ -1,5 +1,5 @@
 -- create expression for the fixed department name by ID
-use schema test.employees;
+use test.employees;
 
 select * from dept;
 

@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 table dept;
 table emp;

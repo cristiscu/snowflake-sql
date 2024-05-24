@@ -1,5 +1,5 @@
 -- see https://docs.snowflake.com/en/sql-reference/sql/update#usage-notes
-use schema test.employees;
+use test.employees;
 
 select * from dept;
 

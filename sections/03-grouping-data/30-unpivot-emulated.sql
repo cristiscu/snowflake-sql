@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- emulated UNPIVOT
 SELECT job, 'divorced' as status, "'divorced'" as salaries,

@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 create or replace table log(msg string not null);
 

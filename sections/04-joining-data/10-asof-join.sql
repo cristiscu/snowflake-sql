@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- assign most recently started project compared to the hire date
 -- with exact match left join

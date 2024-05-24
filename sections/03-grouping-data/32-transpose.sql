@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 SELECT status, sum(salary) as salaries
 FROM emp

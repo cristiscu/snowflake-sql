@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 select dept.dept_id,
     dept.name as department,

@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- see https://docs.snowflake.com/en/sql-reference/operators-subquery
 -- ANY

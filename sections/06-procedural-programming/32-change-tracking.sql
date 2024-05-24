@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- source (table) --> target (table), w/ CHANGE_TRACKING
 CREATE OR REPLACE TABLE cust_source(id INT, name STRING);

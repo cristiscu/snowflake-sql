@@ -1,4 +1,4 @@
-use schema test.employees;
+use test.employees;
 
 -- cust_source (table) --> cust_stream (stream) --> cust_target (table)
 create or replace table cust_source(id int, name string);
