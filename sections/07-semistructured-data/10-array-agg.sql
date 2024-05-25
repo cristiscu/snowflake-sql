@@ -10,7 +10,9 @@ create or replace view dept_with_emps as
 table dept_with_emps;
 
 -- disaggregate (show tabular again, normalized)
+-- TABLE(FLATTEN(...)) ~ LATERAL FLATTEN(...)
 select dept, e.value, e.index
 from dept_with_emps v,
     table(flatten(v.employees, outer => TRUE)) e
 order by dept;
+
