@@ -12,7 +12,8 @@ from lineitem;
 
 -- det slope+intercept
 select regr_slope(l_quantity, l_extendedprice) slope,
-    regr_intercept(l_quantity, l_extendedprice) intercept
+    regr_intercept(l_quantity, l_extendedprice) intercept,
+    regr_r2(l_quantity, l_extendedprice) r2
 from lineitem;
 
 -- make a prediction (w/ linear regression)
