@@ -15,6 +15,7 @@ select *
 from lineitem
 limit 10;
 
+-- TABLE statement
 table lineitem
 limit 10;
 
@@ -30,6 +31,7 @@ select identifier('l_orderkey')
 from identifier('lineitem')
 limit 10;
 
+-- table functions
 select *
 from table(result_scan(last_query_id()))
 limit 10;

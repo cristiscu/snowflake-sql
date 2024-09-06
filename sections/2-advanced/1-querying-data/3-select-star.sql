@@ -6,6 +6,7 @@ select *
 from lineitem
 limit 10;
 
+-- EXCLUDE
 select * exclude L_COMMENT
 from lineitem
 limit 10;
@@ -16,6 +17,7 @@ select *
 from lineitem
 limit 10;
 
+-- ILIKE
 select * ilike 'L_S%'
 from lineitem
 limit 10;

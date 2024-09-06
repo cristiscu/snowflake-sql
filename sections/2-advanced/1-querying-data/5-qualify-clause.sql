@@ -1,5 +1,24 @@
 -- see https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
 
+select $1
+from (values ('apples'), ('oranges'), ('nuts'))
+order by $1;
+
+select top 2 $1
+from (values ('apples'), ('oranges'), ('nuts'))
+order by $1;
+
+select $1
+from (values ('apples'), ('oranges'), ('nuts'))
+order by $1
+limit 2;
+
+select $1
+from (values ('apples'), ('oranges'), ('nuts'))
+order by $1
+limit 2;
+
+-- ============================================================
 -- these both fail
 select name
 from (values ('apples'), ('oranges'), ('nuts')) as fruits(name)
@@ -32,7 +51,7 @@ qualify row_number() over (order by name) >= 2
 order by name;
 
 -- ==============================================================
--- more complex query
+-- a more complex query
 select distinct fruits.name, sum(sales.quantity) as sold
 from (values ('apples', 100), ('oranges', 50),
     ('nuts', 500), ('grapes', 200), ('plums', 0))
