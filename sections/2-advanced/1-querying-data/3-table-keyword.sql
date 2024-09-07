@@ -15,12 +15,18 @@ select *
 from lineitem
 limit 10;
 
+-- =================================================
 -- TABLE statement
 table lineitem
 limit 10;
 
 select *
 from table('lineitem')
+limit 10;
+
+set name = 'lineitem';
+select *
+from table($name)
 limit 10;
 
 select *
@@ -31,6 +37,7 @@ select identifier('l_orderkey')
 from identifier('lineitem')
 limit 10;
 
+-- =================================================
 -- table functions
 select *
 from table(result_scan(last_query_id()))

@@ -1,11 +1,11 @@
--- see https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
-
 -- no FROM dual
-select 1;
+select 1, current_timestamp(), current_timestamp;
 
 select 1
+where 1=1
 group by 1
-having 1 = 1;
+having 1=1
+order by 1;
 
 -- $1 returns NULL if no FROM
 select $1;
@@ -32,18 +32,14 @@ from region left join nation
 where region.r_regionkey = nation.n_regionkey
 order by 1, 2;
 
--- ==============================================================
--- reused aliases (as intermediate expressions)
-SELECT r_regionkey * 10 as id, lower(r_name) as name
-FROM region
-WHERE (r_regionkey * 10) >= 20
-GROUP BY r_regionkey * 10, lower(r_name)
-HAVING sum(r_regionkey * 10) >= 20
-ORDER BY lower(r_name) DESC;
+select r_name, n_name
+from region r left join 
+    (select n_name from nation where r.r_regionkey = n_regionkey)
+    on true
+order by 1, 2;
 
-SELECT r_regionkey * 10 as id, lower(r_name) as name
-FROM region
-WHERE id >= 20
-GROUP BY id, name
-HAVING sum(id) >= 20
-ORDER BY name DESC;
+select r_name, n_name
+from region r left join lateral 
+    (select n_name from nation where r.r_regionkey = n_regionkey)
+    -- on true
+order by 1, 2;
