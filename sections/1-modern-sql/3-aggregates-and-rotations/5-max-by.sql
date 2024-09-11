@@ -1,3 +1,5 @@
+-- see https://docs.snowflake.com/en/sql-reference/functions/min_by
+-- see https://docs.snowflake.com/en/sql-reference/functions/max_by
 use test.employees;
 
 -- top employee with biggest salary per department

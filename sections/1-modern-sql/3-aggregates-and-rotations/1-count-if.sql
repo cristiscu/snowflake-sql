@@ -1,4 +1,9 @@
+-- see https://docs.snowflake.com/en/sql-reference/functions/count_if
 use snowflake_sample_data.tpch_sf1;
+
+select *
+from customer
+limit 1000;
 
 select
     (select count(*) from customer
