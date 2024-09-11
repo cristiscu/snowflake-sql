@@ -1,4 +1,5 @@
 -- see https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
+use snowflake_sample_data.tpch_sf1;
 
 -- reused aliases (as intermediate expressions)
 SELECT r_regionkey * 10 as id, lower(r_name) as name

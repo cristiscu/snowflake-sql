@@ -1,3 +1,5 @@
+use snowflake_sample_data.tpch_sf1;
+
 -- no required ON (could use WHERE instead)
 select region.r_name, nation.n_name
 from region left join nation
