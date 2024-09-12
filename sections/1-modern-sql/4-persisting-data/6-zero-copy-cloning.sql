@@ -1,4 +1,3 @@
--- select test database and schema
 use test.employees;
 
 select * from dept;

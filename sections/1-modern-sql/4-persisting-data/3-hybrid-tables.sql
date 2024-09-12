@@ -1,19 +1,6 @@
 
--- ===========================================================
--- Inspect Relationships
-
-use test.employees;
-
-SHOW DATABASES;
-SHOW SCHEMAS IN DATABASE test;
-SHOW TABLES IN SCHEMA test.employees;
-SHOW COLUMNS IN SCHEMA test.employees;
-SHOW UNIQUE KEYS IN SCHEMA test.employees;
-SHOW PRIMARY KEYS IN SCHEMA test.employees;
-SHOW IMPORTED KEYS IN SCHEMA test.employees;
-
--- ===========================================================
--- Hybrid Tables (not supported on trial accounts!)
+-- see https://docs.snowflake.com/en/user-guide/tables-hybrid
+-- not supported on trial accounts! (now in PuPr, some AWS regions only)
 
 create or replace hybrid table projh (
 	proj_id     integer     PRIMARY KEY,

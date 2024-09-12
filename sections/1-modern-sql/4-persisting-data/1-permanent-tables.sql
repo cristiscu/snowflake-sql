@@ -1,4 +1,5 @@
 -- (re)create TEST database and schema
+drop database if exists test;
 create or replace database test;
 create schema if not exists test.employees;
 use schema test.employees;
@@ -32,13 +33,20 @@ create table if not exists proj (
     end_date    date);
 
 -- ===========================================================
--- (re)create EMPLOYEES tables w/ (uninforced) constraints
+-- (re)create and populate EMPLOYEES tables, w/ (uninforced) constraints
 create or replace table dept (
 	dept_id     integer     PRIMARY KEY,
 	name        string      NOT NULL UNIQUE,
 	location    string      NULL)
-comment = 'departments';
-    
+comment = 'departments'
+AS SELECT *
+FROM VALUES
+    (10,    'Accounting',   'New York'  ),
+    (20,    'Research',     'Dallas'    ),
+    (30,    'Sales',        'Chicago'   ),
+    (40,    'Operations',   'Boston'    );
+table dept;
+
 create or replace table emp (
 	emp_id      integer     PRIMARY KEY,
 	name        string      NOT NULL UNIQUE,
@@ -54,25 +62,8 @@ create or replace table emp (
     FOREIGN KEY (dept_id)   REFERENCES dept(dept_id))
 comment = 'employees';
 
-create or replace table proj (
-	proj_id     integer,
-	name        string      NOT NULL,
-	start_date  date        NOT NULL,
-    end_date    date,
-    PRIMARY KEY (proj_id),
-    UNIQUE (name))
-comment = 'projects';
-
--- ===========================================================
--- Populate EMPLOYEES Tables
-
-insert into dept values
-    (10,    'Accounting',   'New York'  ),
-    (20,    'Research',     'Dallas'    ),
-    (30,    'Sales',        'Chicago'   ),
-    (40,    'Operations',   'Boston'    );
-
-insert overwrite into emp values
+truncate emp;
+insert into emp values
     (7839, 'Steven King',       'PRESIDENT',    'college',     null,   '1981-11-17',   5000,   null,   'married',  'M', 10),
     (7698, 'Neena Kochhar',     'MANAGER',      'college',     7839,   '1981-05-01',   2850,   null,   'single',   'F', 30),
     (7654, 'Hermann Baer',      'SALESMAN',     'primary',     7698,   '1981-09-28',   1250,   1400,   'single',   'M', 30),
@@ -87,8 +78,20 @@ insert overwrite into emp values
     (7876, 'Luis Popp',         'CLERK',        null,          7788,   '1983-01-12',   1100,   null,   null,       'M', 20),
     (7902, 'Den Raphaely',      'ANALYST',      'secondary',   7566,   '1981-12-03',   3000,   null,   'married',  'M', 20),
     (7369, 'Alexander Khoo',    'CLERK',        'primary',     7902,   '1980-12-17',   800,    null,   'married',  'M', 20);
+table emp;
 
-insert into proj values
+create or replace table proj (
+	proj_id     integer,
+	name        string      NOT NULL,
+	start_date  date        NOT NULL,
+    end_date    date,
+    PRIMARY KEY (proj_id),
+    UNIQUE (name))
+comment = 'projects';
+
+insert OVERWRITE into proj(proj_id, name, start_date, end_date)
+select $1, $2, $3, $4
+from values
     (1,    'Cleanup Data',          '1980-12-05',   '1981-01-09'    ),
     (2,    'ETL Pipeline',          '1981-01-09',   '1981-04-02'    ),
     (3,    'Data Preprocessing',    '1981-04-02',   '1981-06-08'    ),
@@ -96,6 +99,7 @@ insert into proj values
     (5,    'ML Kickoff',            '1981-08-28',   '1981-09-11'    ),
     (6,    'Model Training',        '1981-09-28',   '1982-12-10'    ),
     (7,    'Model Deployment',      '1982-12-11',   null            );
+select * from proj;
 
 /*
 Alternative w/ CSV File:
