@@ -1,6 +1,6 @@
+-- see https://docs.snowflake.com/en/sql-reference/sql/insert-multi-table
 use test.employees;
 
--- see https://docs.snowflake.com/en/sql-reference/sql/insert-multi-table
 -- recreate tables w/ LIKE
 create or replace table emp_accounting like emp;
 alter table emp_accounting drop column dept_id;

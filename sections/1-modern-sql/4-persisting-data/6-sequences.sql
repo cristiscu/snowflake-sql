@@ -1,6 +1,7 @@
 use test.employees;
 
--- sequences
+-- =========================================================
+-- Sequences
 -- see https://docs.snowflake.com/en/user-guide/querying-sequences
 CREATE OR REPLACE SEQUENCE seq1
     START = 1
@@ -16,10 +17,11 @@ SELECT seq1.NEXTVAL,
 SELECT seq1.NEXTVAL
 FROM table(generator(rowcount => 5));
 
+-- =========================================================
 -- populate value from sequence
 -- see https://community.snowflake.com/s/article/Why-does-a-gap-occur-on-identity-columns
 create or replace sequence seq2;
-create or replace table proj2 (
+create or replace transient table proj2 (
 	proj_id     integer     DEFAULT seq1.nextval    PRIMARY KEY,
 	name        string      NOT NULL                UNIQUE,
 	start_date  date        NOT NULL,
@@ -34,8 +36,9 @@ insert into proj2 values
     ('Model Training',        '1981-09-28',   '1982-12-10'    ),
     ('Model Deployment',      '1982-12-11',   null            );
 
+-- =========================================================
 -- populate value from autoincrement
-create or replace table proj3 (
+create or replace temporary table proj3 (
 	proj_id     integer     IDENTITY(1, 1) ORDER    PRIMARY KEY,
 	name        string      NOT NULL                UNIQUE,
 	start_date  date        NOT NULL,
