@@ -1,3 +1,4 @@
+-- see https://docs.snowflake.com/en/sql-reference/constructs/asof-join
 use test.employees;
 
 -- assign most recently started project compared to the hire date
