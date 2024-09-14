@@ -1,3 +1,4 @@
+-- https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-batch
 use test.employees;
 
 -- scalar UDFs (in SQL/JavaScript/Python)

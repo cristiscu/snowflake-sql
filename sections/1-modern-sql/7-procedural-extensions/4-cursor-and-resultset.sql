@@ -1,3 +1,4 @@
+-- Cursor and ResultSet: multi-table insert/split with script
 use test.employees;
 
 table dept;

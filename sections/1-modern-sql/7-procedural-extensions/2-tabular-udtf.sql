@@ -1,3 +1,4 @@
+-- see https://docs.snowflake.com/en/developer-guide/udf/sql/udf-sql-tabular-functions
 use test.employees;
 
 -- UDTF in SQL

@@ -1,3 +1,4 @@
+-- Snowflake Scripting Blocks: generic duplicates
 use test.employees;
 
 -- hard-coded version
