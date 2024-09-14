@@ -1,4 +1,5 @@
--- Snowflake Scripting Blocks: generic duplicates
+-- Snowflake Scripting Blocks: duplicate returned rows from any table
+-- see https://docs.snowflake.com/en/developer-guide/snowflake-scripting/index
 use test.employees;
 
 -- hard-coded version

@@ -1,4 +1,4 @@
--- https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-batch
+-- see https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-batch
 use test.employees;
 
 -- scalar UDFs (in SQL/JavaScript/Python)
@@ -18,7 +18,7 @@ create or replace function add_bonus(salary float, bonus float)
     handler = 'add_bonus'
 as $$
 def add_bonus(salary, bonus):
-    return salary * (1.0 + bonus / 100.0)``
+    return salary * (1.0 + bonus / 100.0)
 $$;
 
 select name, salary,
@@ -28,6 +28,11 @@ select name, salary,
 from emp
 order by name;
 
+select uniform(1000, 10000, random())::float salary,
+    add_bonus(salary, 5) as sal
+from table(generator(rowcount => 1000000));
+
+-- ==========================================================
 -- vectorized Python UDF
 create or replace function add_bonus_v(salary float, bonus float)
     returns float
@@ -49,3 +54,7 @@ select name, salary,
     add_bonus_v(salary, 5) as salv
 from emp
 order by name;
+
+select uniform(1000, 10000, random())::float salary,
+    add_bonus_v(salary, 5) as salv
+from table(generator(rowcount => 1000000));

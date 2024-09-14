@@ -1,3 +1,4 @@
+-- see https://docs.snowflake.com/en/sql-reference/sql/merge
 use test.employees;
 
 -- source (table) --> target (table), w/ MERGE in stored proc
@@ -14,13 +15,13 @@ merge into cust_target t using cust_source s on t.id = s.id
 
 create or replace procedure cust_cdc() returns int
 as $$
-    merge into cust_target t using cust_source s on t.id = s.id
-        when not matched and not del
-            then insert (id, name) values (s.id, s.name)
-        when matched and del
-            then delete
-        when matched and not del
-            then update set t.name = s.name
+merge into cust_target t using cust_source s on t.id = s.id
+    when not matched and not del
+        then insert (id, name) values (s.id, s.name)
+    when matched and del
+        then delete
+    when matched and not del
+        then update set t.name = s.name;
 $$;
 
 -- 3 x INSERT
@@ -30,7 +31,7 @@ CALL cust_cdc();
 TRUNCATE TABLE cust_source;
 SELECT * FROM cust_target;
 
--- UPDATE + INSERT
+-- UPDATE + DELETE
 INSERT INTO cust_source
     VALUES (False, 1, 'Mark'), (True, 2, NULL);
 CALL cust_cdc();

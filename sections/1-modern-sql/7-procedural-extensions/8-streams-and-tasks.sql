@@ -1,3 +1,4 @@
+-- see https://quickstarts.snowflake.com/guide/getting_started_with_streams_and_tasks/index.html
 use test.employees;
 
 -- cust_source (table) --> cust_stream (stream) --> cust_target (table)
@@ -27,7 +28,7 @@ as
 
 -- insert 3 rows in the source table
 select system$stream_has_data('cust_stream');
-insert into source values (1, 'John'), (2, 'Mary'), (3, 'George');
+insert into cust_source values (1, 'John'), (2, 'Mary'), (3, 'George');
 select system$stream_has_data('cust_stream');
 
 -- could manually execute the task and look at its execution
@@ -40,10 +41,10 @@ select *
 select * from cust_target;
 
 -- update+delete existing source rows --> target should make in-place changes
-update source
-    set name = 'Mark'
-    where id = 1;
-delete from cust_source
-    where id = 2;
+update cust_source set name = 'Mark' where id = 1;
+delete from cust_source where id = 2;
 select system$stream_has_data('cust_stream');
 select * from cust_target;
+
+-- do not forget to suspend the task when done (or it will consume credits!)
+alter task cust_task suspend;

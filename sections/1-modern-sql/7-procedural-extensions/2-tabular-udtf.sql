@@ -16,9 +16,10 @@ order by 1, 2;
 
 -- built-in UDTFs
 -- see https://docs.snowflake.com/en/sql-reference/functions-table
+-- built-in table functions
 show tables;
 select "database_name" || '.' || "schema_name" || '.' || "name" as obj 
-from table(result_scan(last_query_id(-2)));
+from table(result_scan(last_query_id()));
 
 select seq1(), seq2(), seq4(), seq8()
 from table(generator(rowcount => 100));

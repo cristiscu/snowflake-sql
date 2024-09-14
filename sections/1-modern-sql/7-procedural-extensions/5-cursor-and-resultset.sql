@@ -1,15 +1,23 @@
--- Cursor and ResultSet: multi-table insert/split with script
+-- Cursor and ResultSet: multi-table insert
+-- see https://docs.snowflake.com/en/developer-guide/snowflake-scripting/cursors
 use test.employees;
 
 table dept;
 table emp;
 
 -- need to create separate tables w/ employees for each department
--- test w/ Accounting first --> CTAS
 CREATE OR REPLACE TABLE emp_Accounting AS
     SELECT * EXCLUDE dept_id FROM emp
     WHERE dept_id = 10;
-table emp_accounting;
+CREATE OR REPLACE TABLE emp_Research AS
+    SELECT * EXCLUDE dept_id FROM emp
+    WHERE dept_id = 20;
+CREATE OR REPLACE TABLE emp_Sales AS
+    SELECT * EXCLUDE dept_id FROM emp
+    WHERE dept_id = 30;
+CREATE OR REPLACE TABLE emp_Operations AS
+    SELECT * EXCLUDE dept_id FROM emp
+    WHERE dept_id = 40;
 
 BEGIN
     LET cur CURSOR FOR SELECT dept_id, name FROM dept;
