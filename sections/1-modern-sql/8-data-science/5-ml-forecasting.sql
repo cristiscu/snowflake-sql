@@ -1,95 +1,57 @@
--- ML Forecasting: sales forecast
--- see https://docs.snowflake.com/en/user-guide/ml-powered-forecasting
-USE SCHEMA test.ts;
+-- ML Forecasting
+use test.public;
 
-// ===================================================
-// single-series forecast
-SELECT date, sales FROM view1_train;
+create or replace snowflake.ml.forecast fcast(
+    input_data => SYSTEM$QUERY_REFERENCE(
+        'SELECT ts, temp FROM weather_view WHERE train'),
+    timestamp_colname => 'ts',
+    target_colname => 'temp');
 
-CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fore1(
-  INPUT_DATA => SYSTEM$QUERY_REFERENCE('SELECT date, sales FROM view1_train'),
-  TIMESTAMP_COLNAME => 'date',
-  TARGET_COLNAME => 'sales');
-SHOW SNOWFLAKE.ML.FORECAST;
+show snowflake.ml.forecast;
+    
+call fcast!forecast(
+    forecasting_periods => 30,
+    config_object => {'prediction_interval': 0.9});
 
-CALL fore1!FORECAST(FORECASTING_PERIODS => 3);
+CALL fcast!SHOW_TRAINING_LOGS();
 
-BEGIN
-  CALL fore1!FORECAST(FORECASTING_PERIODS => 3);
-  LET x := SQLID;
-  CREATE OR REPLACE TABLE sales_forecasts AS SELECT * FROM TABLE(RESULT_SCAN(:x));
-END;
-SELECT * FROM sales_forecasts;
+-- w/ exogenous var (wind)
+CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fcast2(
+  INPUT_DATA => SYSTEM$QUERY_REFERENCE(
+      'SELECT ts, temp, wind FROM weather_view WHERE train'),
+  TIMESTAMP_COLNAME => 'ts',
+  TARGET_COLNAME => 'temp');
 
-SELECT date AS ts, sales AS actual,
-  NULL AS forecast, NULL AS lower_bound, NULL AS upper_bound
-  FROM view1_train
-UNION ALL
-SELECT ts, NULL AS actual,
-  forecast, lower_bound, upper_bound
-  FROM sales_forecasts;
+CALL fcast2!FORECAST(
+  INPUT_DATA => SYSTEM$QUERY_REFERENCE(
+      'SELECT ts, temp, wind FROM weather_view WHERE not train'),
+  TIMESTAMP_COLNAME => 'ts');
 
-CALL fore1!FORECAST(
+-- multi-series (bad)
+CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fcast3(
+  INPUT_DATA => SYSTEM$QUERY_REFERENCE(
+      'SELECT bad, ts, temp FROM weather_view WHERE train'),
+  SERIES_COLNAME => 'bad',
+  TIMESTAMP_COLNAME => 'ts',
+  TARGET_COLNAME => 'temp');
+
+CALL fcast3!FORECAST(
   FORECASTING_PERIODS => 3,
-  CONFIG_OBJECT => {'prediction_interval': 0.8});
+  SERIES_VALUE => [2, FALSE]);
 
-// ===================================================
-// training logs
-CALL fore1!SHOW_TRAINING_LOGS();
+-- multi-series (bad) w/ exogenous vars (wind)
+CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fcast4(
+  INPUT_DATA => SYSTEM$REFERENCE(
+    'SELECT bad, ts, temp, wind FROM weather_view WHERE train'),
+  SERIES_COLNAME => 'bad',
+  TIMESTAMP_COLNAME => 'ts',
+  TARGET_COLNAME => 'temp');
 
-INSERT INTO sales_ts VALUES
-  (1, 'jacket', to_timestamp_ntz('2020-01-03'), 5.0, false, 54, 0.2, 'duplicate');
+CALL fcast4!FORECAST(
+  INPUT_DATA => SYSTEM$REFERENCE(
+      'SELECT bad, ts, temp, wind FROM weather_view WHERE not train'),
+  SERIES_COLNAME => 'bad',
+  TIMESTAMP_COLNAME => 'ts');
 
-CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fore1(
-  INPUT_DATA => SYSTEM$QUERY_REFERENCE('SELECT date, sales FROM view1_train'),
-  TIMESTAMP_COLNAME => 'date',
-  TARGET_COLNAME => 'sales',
-  CONFIG_OBJECT => {'ON_ERROR': 'SKIP'});
-CALL fore1!SHOW_TRAINING_LOGS();
-
-DELETE FROM sales_ts WHERE holiday = 'duplicate';
-
-// ===================================================
-// single-series forecast w/ exogenous vars
-CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fore2(
-  INPUT_DATA => SYSTEM$QUERY_REFERENCE($$
-SELECT date, sales, temperature, humidity, holiday
-FROM view1_train
-$$),
-  TIMESTAMP_COLNAME => 'date',
-  TARGET_COLNAME => 'sales');
-
-CALL fore2!FORECAST(
-  INPUT_DATA => SYSTEM$QUERY_REFERENCE($$
-SELECT date, sales, temperature, humidity, holiday
-FROM view1_test
-$$),
-  TIMESTAMP_COLNAME => 'date');
-
-// ===================================================
-// multi-series forecast
-CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fore3(
-  INPUT_DATA => SYSTEM$QUERY_REFERENCE('SELECT store_item, date, sales FROM view_train'),
-  SERIES_COLNAME => 'store_item',     -- [store_id, item] multiple TS
-  TIMESTAMP_COLNAME => 'date',
-  TARGET_COLNAME => 'sales');
-
-CALL fore3!FORECAST(
-  FORECASTING_PERIODS => 3,
-  SERIES_VALUE => [2,'umbrella']);
-
-// ===================================================
-// multi-series forecast w/ exogenous vars
-CREATE OR REPLACE SNOWFLAKE.ML.FORECAST fore4(
-  INPUT_DATA => SYSTEM$REFERENCE('VIEW', 'view_train'),
-  SERIES_COLNAME => 'store_item',
-  TIMESTAMP_COLNAME => 'date',
-  TARGET_COLNAME => 'sales');
-
-CALL fore4!FORECAST(
-  INPUT_DATA => SYSTEM$REFERENCE('VIEW', 'view_test'),
-  SERIES_COLNAME => 'store_item',
-  TIMESTAMP_COLNAME => 'date');
-
-CALL fore4!EXPLAIN_FEATURE_IMPORTANCE();
-CALL fore4!SHOW_EVALUATION_METRICS();
+CALL fcast4!EXPLAIN_FEATURE_IMPORTANCE();
+CALL fcast4!SHOW_EVALUATION_METRICS();

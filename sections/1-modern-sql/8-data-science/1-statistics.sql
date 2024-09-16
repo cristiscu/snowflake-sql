@@ -1,5 +1,7 @@
-
 use snowflake_sample_data.tpch_sf1;
+
+select l_extendedprice
+from lineitem;
 
 -- mean/mode/median
 select avg(l_extendedprice) as mean,
@@ -25,7 +27,7 @@ from lineitem
 order by l_orderkey desc
 limit 10000;
 
--- strong positive correlation (see also SiS heatmap)
+-- strong positive correlation
 select corr(l_quantity, l_extendedprice)
 from lineitem;
 

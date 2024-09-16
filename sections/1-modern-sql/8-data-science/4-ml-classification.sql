@@ -1,40 +1,21 @@
--- ML Classification: multiclass classifier
--- see https://docs.snowflake.com/user-guide/snowflake-cortex/ml-functions/classification#training-and-using-a-multi-class-classifier
+-- ML Binary Classification
 USE SCHEMA test.public;
 
-SELECT * FROM purchases;
-
-SELECT class, count(*)
-FROM purchases
-GROUP BY 1;
-
-CREATE OR REPLACE SNOWFLAKE.ML.CLASSIFICATION clf_multiclass(
+CREATE OR REPLACE SNOWFLAKE.ML.CLASSIFICATION cls(
     INPUT_DATA => SYSTEM$QUERY_REFERENCE(
-        'SELECT interest, rating, class FROM purchases WHERE class IS NOT NULL'),
-    TARGET_COLNAME => 'class');
+        'SELECT temp, wind, bad FROM weather_view WHERE train'),
+    TARGET_COLNAME => 'bad');
 SHOW snowflake.ml.classification;
 
-SELECT interest, rating, clf_multiclass!PREDICT(
-    INPUT_DATA => object_construct(*)) as preds
-FROM purchases
-WHERE class IS NULL;
+SELECT temp, wind, bad, cls!PREDICT(
+    INPUT_DATA => object_construct(*)) as bad_pred
+FROM weather_view
+WHERE not train;
 
-WITH cte AS (
-    SELECT interest, rating, clf_multiclass!PREDICT(
-        INPUT_DATA => object_construct(*)) as preds
-    FROM purchases
-    WHERE class IS NULL)
-SELECT preds:class::string AS pred_class,
-    ROUND(preds:probability:not_interested, 4) AS not_interested_proba,
-    ROUND(preds['probability']['purchase'], 4) AS purchase_proba,
-    ROUND(preds['probability']['add_to_wishlist'], 4) AS add_to_wishlist_proba
-FROM cte
-LIMIT 10;
+CALL cls!SHOW_EVALUATION_METRICS();
+CALL cls!SHOW_GLOBAL_EVALUATION_METRICS();
+CALL cls!SHOW_THRESHOLD_METRICS();
 
-CALL clf_multiclass!SHOW_EVALUATION_METRICS();
-CALL clf_multiclass!SHOW_GLOBAL_EVALUATION_METRICS();
-CALL clf_multiclass!SHOW_THRESHOLD_METRICS();
-
-CALL clf_multiclass!SHOW_CONFUSION_MATRIX();
-CALL clf_multiclass!SHOW_FEATURE_IMPORTANCE();
-CALL clf_multiclass!SHOW_TRAINING_LOGS();
+CALL cls!SHOW_CONFUSION_MATRIX();
+CALL cls!SHOW_FEATURE_IMPORTANCE();
+CALL cls!SHOW_TRAINING_LOGS();

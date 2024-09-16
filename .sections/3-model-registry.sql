@@ -1,5 +1,3 @@
--- see in Snowsight first!
-
 show models
     in schema test.public;
 
