@@ -1,3 +1,4 @@
+-- ML Classification: multiclass classifier
 -- see https://docs.snowflake.com/user-guide/snowflake-cortex/ml-functions/classification#training-and-using-a-multi-class-classifier
 USE SCHEMA test.public;
 

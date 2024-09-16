@@ -1,3 +1,4 @@
+-- ML Anomaly Detection: sales anomalies
 USE SCHEMA test.ts;
 
 // ===================================================

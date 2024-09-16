@@ -1,3 +1,4 @@
+-- ML Contribution Explorer: in Titanic dataset
 USE TEST.PUBLIC;
 
 -- TEST.PUBLIC.TITANIC must be previously created from the uploaded TITANIC.CSV

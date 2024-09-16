@@ -1,3 +1,4 @@
+-- ML Forecasting: sales forecast
 -- see https://docs.snowflake.com/en/user-guide/ml-powered-forecasting
 USE SCHEMA test.ts;
 
