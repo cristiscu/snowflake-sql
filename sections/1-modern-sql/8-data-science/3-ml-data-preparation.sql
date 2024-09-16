@@ -7,7 +7,7 @@ select ts, temp, wind
 from weather
 order by ts;
 
--- check if proper timeserie (for forecast/anomaly detection) --> must return nothing
+-- check if proper time-series (for forecast/anomaly detection) --> must return nothing
 select ts, count(*) as c
 from weather
 group by ts

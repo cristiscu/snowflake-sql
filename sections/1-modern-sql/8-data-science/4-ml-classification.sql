@@ -1,5 +1,5 @@
 -- ML Binary Classification
-USE SCHEMA test.public;
+use test.public;
 
 CREATE OR REPLACE SNOWFLAKE.ML.CLASSIFICATION cls(
     INPUT_DATA => SYSTEM$QUERY_REFERENCE(
