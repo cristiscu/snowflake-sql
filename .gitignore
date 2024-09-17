@@ -17,3 +17,4 @@ venv/
 **/.streamlit/secrets.toml
 **/data/housing.csv
 **/kb/*
+.sections/
