@@ -4,6 +4,23 @@ create or replace database test;
 create schema if not exists test.employees;
 use schema test.employees;
 
+use test.employees;
+
+-- ===========================================================
+-- Object Identifiers - TODO!
+
+create or replace temp table MyTable(col string, "Id" number) as
+    select 'abc', 123;
+
+select * from MYTABLE;
+select * from test.employees.MYTABLE;
+select * from IDENTIFIER('MYTABLE');
+select * from TABLE('MYTABLE');
+
+desc table MyTable;
+select "Id" from mytable;
+select Id from mytable;
+
 -- ===========================================================
 -- Permanent Tables
 
