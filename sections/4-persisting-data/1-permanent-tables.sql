@@ -21,6 +21,16 @@ desc table MyTable;
 select "Id" from mytable;
 select Id from mytable;
 
+-- query styles
+select
+    c1
+    ,c2
+    ,c3
+from
+    t1;
+
+SELECT a, b, c...;
+
 -- ===========================================================
 -- Permanent Tables
 
