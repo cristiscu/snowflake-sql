@@ -8,6 +8,8 @@ Romania: Bucharest
 France and Iran: no child cities
 New York: no parent country
 */
+select * from values (1, 'Canada'), (2, 'Romania'), (3, 'France'), (4, 'Iran') as nations(nid, nation);
+select * from values (1, 'Vancouver'), (2, 'Bucharest'), (1, 'Toronto'), (null, 'New York') as cities(cid, city);
 
 -- ===========================================================
 -- CROSS JOIN (cartesian product of all non-NULL rows from both sides)

@@ -91,7 +91,7 @@ from emp
 group by grouping sets (status, gender)
 order by g;
 
-select 1 as g, status, null, sum(salary)
+select 1 as g, status, null as gender, sum(salary)
 from emp
 group by status
 union all
@@ -119,9 +119,9 @@ select 3, null, null, sum(salary)
 from emp;
 
 -- ==============================================================
--- GROUPING function
+-- visual demo, on 2 columns
 
--- GROUPING SETS
+-- CUBE
 select dept_id,
     to_char(year(hire_date)) as year,
     grouping(dept_id) dept_id_g,
@@ -129,7 +129,7 @@ select dept_id,
     grouping(dept_id, year) dept_id_year_g,
     sum(salary) sals
 from emp where year > '1980'
-group by grouping sets (dept_id, year)
+group by cube (dept_id, year)
 having sum(salary) > 5000
 order by dept_id, year;
 
@@ -145,7 +145,7 @@ group by rollup (dept_id, year)
 having sum(salary) > 5000
 order by dept_id, year;
 
--- CUBE
+-- GROUPING SETS (by 2 individual columns)
 select dept_id,
     to_char(year(hire_date)) as year,
     grouping(dept_id) dept_id_g,
@@ -153,6 +153,7 @@ select dept_id,
     grouping(dept_id, year) dept_id_year_g,
     sum(salary) sals
 from emp where year > '1980'
-group by cube (dept_id, year)
+group by grouping sets (dept_id, year)
 having sum(salary) > 5000
 order by dept_id, year;
+
