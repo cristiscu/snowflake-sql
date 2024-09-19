@@ -28,8 +28,8 @@ create or replace table json_table(v variant) as
             }
         ],
         "bicycle": {
-        "color": "red",
-        "price": 19.95
+            "color": "red",
+            "price": 19.95
         }
     }
 }';
