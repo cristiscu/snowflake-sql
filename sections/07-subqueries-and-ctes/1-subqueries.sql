@@ -2,7 +2,7 @@ use test.employees;
 
 -- ======================================================
 -- uncorrelated subqueries
--- in SELECT/WHERE/FROM, bit also in HAVING/GROUP BY/ORDER BY
+-- in SELECT/WHERE/FROM, but also in HAVING/GROUP BY/ORDER BY
 
 select AVG(e.salary) from emp e;
 

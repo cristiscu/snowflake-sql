@@ -1,6 +1,9 @@
 -- create expression for the fixed department name by ID
 use test.employees;
 
+select emp.name as employee, dept.name as department
+from emp join dept on emp.dept_id = dept.dept_id;
+
 select * from dept;
 
 -- IFF
@@ -13,7 +16,8 @@ from emp;
 
 -- DECODE
 select name as employee,
-    decode(dept_id, 10, 'Accounting',
+    decode(dept_id,
+    10, 'Accounting',
     20, 'Research',
     30, 'Sales',
     'Operations') as department
@@ -28,7 +32,7 @@ select name as employee,
     else 'Operations' end as department
 from emp;
 
--- simple CASE clause (+ UDF)
+-- simple CASE clause
 select name as employee,
     case dept_id
     when 10 then 'Accounting'
@@ -37,6 +41,7 @@ select name as employee,
     else 'Operations' end as department
 from emp;
 
+-- UDF (for simple CASE clause)
 create or replace function get_dept_name(dept_id int)
     returns string 
 as $$

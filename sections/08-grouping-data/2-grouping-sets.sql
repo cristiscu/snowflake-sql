@@ -100,24 +100,6 @@ from emp
 group by gender
 order by g;
 
-select grouping(status) as g1,
-    grouping(gender) as g2,
-    grouping(status, gender) as g
-from emp
-group by grouping sets ((status, gender), (status), (gender), ())
-order by g nulls last;
-
-select 0 as g, status, gender, sum(salary)
-from emp
-group by status, gender
-union all
-select 1, status, null, sum(salary)
-from emp
-group by status
-union all
-select 3, null, null, sum(salary)
-from emp;
-
 -- ==============================================================
 -- visual demo, on 2 columns
 
@@ -128,7 +110,8 @@ select dept_id,
     grouping(year) year_g,
     grouping(dept_id, year) dept_id_year_g,
     sum(salary) sals
-from emp where year > '1980'
+from emp
+where year > '1980'
 group by cube (dept_id, year)
 having sum(salary) > 5000
 order by dept_id, year;
@@ -140,7 +123,8 @@ select dept_id,
     grouping(year) year_g,
     grouping(dept_id, year) dept_id_year_g,
     sum(salary) sals
-from emp where year > '1980'
+from emp
+where year > '1980'
 group by rollup (dept_id, year)
 having sum(salary) > 5000
 order by dept_id, year;
@@ -152,8 +136,8 @@ select dept_id,
     grouping(year) year_g,
     grouping(dept_id, year) dept_id_year_g,
     sum(salary) sals
-from emp where year > '1980'
+from emp
+where year > '1980'
 group by grouping sets (dept_id, year)
 having sum(salary) > 5000
 order by dept_id, year;
-
