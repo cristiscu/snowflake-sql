@@ -69,7 +69,7 @@ from xml_table;
 
 -- third XML store book content, tag, 'isbn' attribute value
 select XMLGET(XMLGET(v, 'store'), 'book', 2) as book,
-    GET(book, '$')::string as content,
+    GET(book, '$') as content,
     GET(book, '@')::string as tag,
     GET(book, '@isbn')::string as isbn
 from xml_table;

@@ -1,59 +1,78 @@
--- see https://docs.snowflake.com/en/sql-reference/functions/min_by
+-- MAX/MIN_BY: get first order (no duplicates)/first N orders with max price per priority status
 -- see https://docs.snowflake.com/en/sql-reference/functions/max_by
-use test.employees;
+use snowflake_sample_data.tpch_sf1;
 
--- top employee with biggest salary per department
-select dept_id, name, salary
-from emp
-order by dept_id, salary desc;
+-- distinct category values
+select distinct o_orderpriority
+from orders o
+order by 1;
 
-select dept_id,
-    max(salary) as max_sal
-from emp
-group by dept_id
-order by dept_id;
-
-select dept_id,
-    any_value(name) as name,
-    max(salary) over (partition by dept_id order by salary desc) as max_sal
-from emp e
-group by dept_id, salary
-qualify salary = max_sal
-order by dept_id;
-
-select distinct dept_id,
-    first_value(name) over (partition by dept_id order by salary desc) as ename
-from emp
-order by dept_id;
-
-select dept_id,
-    max_by(salary, salary) as max_sal
-from emp
-group by dept_id;
-
-select dept_id,
-    max_by(name, salary) as name
-from emp
-group by dept_id;
-
--- ==================================================
-- MAX by N columns
-
--- top 3 employees with biggest salaries per department
-select dept_id,
-    max_by(name, salary, 3) as names
-from emp
-group by dept_id;
+-- first order with max price per priority status
+select o_orderpriority, o_orderkey, o_totalprice,
+    (select max(o_totalprice)
+    from orders
+    where o_orderpriority = o.o_orderpriority) as max_price
+from orders o
+order by 1, 3 desc;
 
 with cte as (
-    select dept_id, max_by(name, salary, 3) as names
-    from emp
-    group by dept_id)
-select dept_id, n.value as name
-from cte, table(flatten(names)) n;
+    select o_orderpriority as priority, max(o_totalprice) as max_price
+    from orders
+    group by 1)
+select o_orderpriority, o_orderkey, max_price
+from orders join cte on o_orderpriority = priority
+where o_totalprice = max_price
+order by 1, 2;
 
-select dept_id,
-    min_by(name, salary, 3) as min_names,
-    max_by(name, salary, 3) as max_names
-from emp
-group by dept_id;
+select o_orderpriority, max_by(o_orderkey, o_totalprice) as orderkey
+from orders
+group by 1
+order by 1;
+
+select o_orderpriority,
+    any_value(o_orderkey) as o_orderkey,
+    max(o_totalprice) over (partition by o_orderpriority order by o_totalprice desc) as max_price
+from orders o
+group by 1, o_totalprice
+qualify o_totalprice = max_price
+order by 1;
+
+select distinct o_orderpriority,
+    first_value(o_orderkey) over (partition by o_orderpriority order by o_totalprice desc) as orderkey
+from orders
+order by 1;
+
+-- ==================================================
+-- MAX_BY 1
+
+-- ~MAX(o_totalprice)
+select o_orderpriority, MAX_BY(o_totalprice, o_totalprice) as max_price
+from orders
+group by 1
+order by 1;
+
+select o_orderpriority, MAX_BY(o_orderkey, o_totalprice) as orderkey
+from orders
+group by 1
+order by 1;
+
+-- ==================================================
+-- MAX_BY N
+
+-- first N orders (3) with max price per priority status
+select o_orderpriority, MAX_BY(o_orderkey, o_totalprice, 3) as orderkeys
+from orders
+group by 1;
+
+with cte as (
+    select o_orderpriority, MAX_BY(o_orderkey, o_totalprice, 3) as orderkeys
+    from orders
+    group by 1)
+select o_orderpriority, k.value as orderkey
+from cte, table(flatten(orderkeys)) k;
+
+select o_orderpriority,
+    MIN_BY(o_orderkey, o_totalprice, 3) as orderkeys_min,
+    MAX_BY(o_orderkey, o_totalprice, 3) as orderkeys_max
+from orders
+group by 1;

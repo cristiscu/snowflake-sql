@@ -133,11 +133,13 @@ create or replace procedure procJavaS(num float)
     handler = 'MyClass.proc1'
 as $$
     import com.snowflake.snowpark_java.*;
+
     class MyClass {
-    public String proc1(Session session, float num) {
-        String query = "select '+' || to_char(" + num + ")";
-        return session.sql(query).collect()[0].getString(0);
-    }}
+        public String proc1(Session session, float num) {
+            String query = "select '+' || to_char(" + num + ")";
+            return session.sql(query).collect()[0].getString(0);
+        }
+    }
 $$;
 
 call procJavaS(22.5);
@@ -150,9 +152,10 @@ create or replace function fctJava(num float)
     handler = 'MyClass.fct1'
 as $$
     class MyClass {
-    public String fct1(float num) {
-        return "+" + Float.toString(num);
-    }}
+        public String fct1(float num) {
+            return "+" + Float.toString(num);
+        }
+    }
 $$;
 
 select fctJava(22.5);
@@ -165,6 +168,7 @@ create or replace function fcttJava(s string)
     handler = 'MyClass'
 as $$
     import java.util.stream.Stream;
+
     class OutputRow {
         public String out;
         public OutputRow(String outVal) { this.out = outVal; }
@@ -190,11 +194,13 @@ create or replace procedure procScalaS(num float)
     handler = 'MyClass.proc1'
 as $$
     import com.snowflake.snowpark.Session;
+
     object MyClass {
-    def proc1(session: Session, num: Float): String = {
-        var query = "select '+' || to_char(" + num + ")"
-        return session.sql(query).collect()(0).getString(0)
-    }}
+        def proc1(session: Session, num: Float): String = {
+            var query = "select '+' || to_char(" + num + ")"
+            return session.sql(query).collect()(0).getString(0)
+        }
+    }
 $$;
 
 call procScalaS(22.5);
@@ -207,9 +213,10 @@ create or replace function fctScala(num float)
     handler = 'MyClass.fct1'
 as $$
     object MyClass {
-    def fct1(num: Float): String = {
-        return "+" + num.toString
-    }}
+        def fct1(num: Float): String = {
+            return "+" + num.toString
+        }
+    }
 $$;
 
 select fctScala(22.5);
