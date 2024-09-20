@@ -1,5 +1,3 @@
-use schema test.employees;
-
 select name, hire_date,
     lead(salary, 1) over (order by hire_date) lead,
     salary,
@@ -8,5 +6,5 @@ select name, hire_date,
     first_value(salary) over (order by hire_date) first,
     last_value(salary) over (order by hire_date) last,
     nth_value(salary, 1) over (order by hire_date) nth
-from emp
+from test.employees.emp
 order by hire_date;
