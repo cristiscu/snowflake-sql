@@ -78,4 +78,3 @@ from emp e
 where EXISTS (select null from emp where name = e.name and status <> 'single')
     AND NOT EXISTS (select null from emp where name = e.name and salary > 3000)
 order by e.name;
-
