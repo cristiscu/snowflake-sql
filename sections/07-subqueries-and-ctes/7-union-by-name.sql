@@ -1,5 +1,6 @@
 -- UNION [DISTINCT/ALL] BY NAME
 -- https://docs.snowflake.com/en/sql-reference/operators-query#usage-notes-for-the-by-name-clause
+use test.employees;
 select * from emp; 
 
 -- UNION [DISTINCT] BY NAME with SELECT *
