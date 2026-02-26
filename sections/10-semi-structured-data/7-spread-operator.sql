@@ -1,7 +1,7 @@
 -- Expansion Spread Operator (**)
 -- https://docs.snowflake.com/en/sql-reference/operators-expansion
 -- https://www.snowflake.com/en/engineering-blog/sql-spread-operator/
-use test.employyes;
+use test.employees;
 
 CREATE OR REPLACE TABLE spread_demo (col1 INT, col2 VARCHAR);
 INSERT INTO spread_demo VALUES
@@ -13,6 +13,10 @@ INSERT INTO spread_demo VALUES
 SELECT * FROM spread_demo;
 
 -- in an IN clause
+SELECT * FROM spread_demo
+  WHERE col1 IN (3, 4)
+  ORDER BY col1;
+
 SELECT * FROM spread_demo
   WHERE col1 IN (** [3, 4])
   ORDER BY col1;
@@ -26,8 +30,10 @@ SELECT * FROM spread_demo
   ORDER BY col1;
 
 -- as var args in a system-defined function call
+SELECT COALESCE(NULL, NULL, 'my_string_1', 'my_string_2') AS first_non_null;
 SELECT COALESCE(** [NULL, NULL, 'my_string_1', 'my_string_2']) AS first_non_null;
 
+SELECT GREATEST(1, 2, 5, 4, 5) AS greatest_value;
 SELECT GREATEST(** [1, 2, 5, 4, 5]) AS greatest_value;
 
 -- with a bind variable in a SQL user-defined function
