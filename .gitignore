@@ -1,7 +1,3 @@
-dist/
-build/
-venv/
-
 *.log
 *.exe
 *.zip
@@ -9,12 +5,3 @@ venv/
 *.conf
 *.pkl
 *.joblib
-
-**/lib/
-**/__pycache__
-**/node_modules
-**/package-lock.json
-**/.streamlit/secrets.toml
-**/data/housing.csv
-**/kb/*
-.sections/
