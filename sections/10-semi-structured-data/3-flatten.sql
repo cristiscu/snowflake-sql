@@ -1,4 +1,5 @@
--- FLATTEN
+-- FLATTEN Table Function
+-- https://medium.com/snowflake/how-to-visualize-the-data-lineage-graph-in-snowflake-f0a356046380
 -- https://docs.snowflake.com/en/sql-reference/functions/flatten 
 select *
 from snowflake.account_usage.access_history;

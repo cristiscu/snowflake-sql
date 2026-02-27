@@ -1,4 +1,6 @@
 -- Table Constraints
+-- https://medium.com/snowflake/how-to-reverse-engineer-a-snowflake-database-schema-3d62ca208993
+-- https://medium.com/snowflake/how-to-generate-erds-from-a-snowflake-model-3fc53abd0669
 -- https://docs.snowflake.com/en/sql-reference/constraints-overview
 use test.employees;
 

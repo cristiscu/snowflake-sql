@@ -1,5 +1,7 @@
 -- Snowflake Scripting Blocks
 -- https://docs.snowflake.com/en/developer-guide/snowflake-scripting/index
+-- https://cristian-70480.medium.com/a-simple-parameterized-query-in-snowflake-scripting-not-so-easy-da95e0bf8ce7
+-- https://cristian-70480.medium.com/10-wrong-error-messages-in-snowflake-scripting-18c382848ccb
 use test.employees;
 
 -- duplicate returned rows from any table

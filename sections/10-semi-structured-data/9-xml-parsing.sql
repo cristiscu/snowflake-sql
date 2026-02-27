@@ -1,5 +1,6 @@
 -- XML Parsing
 -- https://docs.snowflake.com/en/sql-reference/functions/parse_xml
+-- https://docs.snowflake.com/en/sql-reference/functions/xmlget
 use test.public;
 
 select check_xml(

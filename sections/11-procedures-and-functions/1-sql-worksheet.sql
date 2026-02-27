@@ -1,4 +1,6 @@
--- SQL Worksheets/Files
+-- Sessions and SQL Worksheets/Files
+-- https://cristian-70480.medium.com/all-about-the-snowflake-identifiers-and-variables-64d0cf3181be
+-- https://docs.snowflake.com/en/user-guide/ui-snowsight-worksheets-gs
 use test.employees;
 
 -- current context functions

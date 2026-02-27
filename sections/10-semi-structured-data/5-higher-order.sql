@@ -1,5 +1,6 @@
 -- Higher-Order Functions
 -- https://docs.snowflake.com/en/user-guide/querying-semistructured#label-higher-order-functions
+-- https://medium.com/snowflake/json-data-profiler-as-a-live-streamlit-web-app-54096b00a615
 
 select transform([1, 2, 3], a INT -> a * 2);
 select filter([1, 2, 3], a INT -> a >= 2);

@@ -1,5 +1,5 @@
--- Offset Functions
--- https://docs.snowflake.com/en/sql-reference/functions-window
+-- Window Function Frames
+-- https://docs.snowflake.com/en/sql-reference/functions-window-syntax#usage-notes-for-window-frames
 use schema test.employees;
 
 -- window frame (--> moving average)

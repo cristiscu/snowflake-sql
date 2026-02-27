@@ -1,5 +1,6 @@
--- Standard Joins
+-- Common Join Types
 -- https://docs.snowflake.com/en/sql-reference/constructs/join
+-- https://docs.snowflake.com/en/user-guide/join-elimination
 
 /*
 country --> city - 1-N relationship

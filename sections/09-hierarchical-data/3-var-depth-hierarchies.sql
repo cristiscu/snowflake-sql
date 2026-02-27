@@ -1,4 +1,5 @@
 -- Variable-Depth Hierarchies
+-- https://cristian-70480.medium.com/streamlit-hierarchical-data-viewer-in-snowflake-dbf62cbf5bcd
 use test.employees;
 
 -- employee --> manager

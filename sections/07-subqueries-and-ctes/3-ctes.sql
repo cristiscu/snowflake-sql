@@ -1,4 +1,5 @@
 -- CTEs (Common Table Expressions)
+-- https://melbdataguy.medium.com/10-things-i-like-about-snowflake-from-a-sql-server-migrant-28b6dd7dc592
 use test.employees;
 
 -- =======================================================

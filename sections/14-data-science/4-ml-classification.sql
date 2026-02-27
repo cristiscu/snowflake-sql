@@ -1,4 +1,4 @@
--- ML Binary Classification
+-- ML Classification
 -- https://docs.snowflake.com/en/user-guide/ml-functions/classification
 use test.public;
 

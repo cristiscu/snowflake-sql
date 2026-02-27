@@ -1,4 +1,5 @@
 -- Statistics in Snowflake
+-- https://www.datacamp.com/tutorial/understanding-skewness-and-kurtosis
 use snowflake_sample_data.tpch_sf1;
 
 select l_extendedprice

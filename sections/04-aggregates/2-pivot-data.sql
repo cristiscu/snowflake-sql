@@ -1,5 +1,8 @@
 -- PIVOT Queries
+-- https://medium.com/snowflake/how-to-properly-generate-a-dynamic-pivot-query-in-snowflake-921bde88b300
+-- https://medium.com/snowflake/about-the-implicit-hidden-group-by-clause-in-a-pivot-query-66324b5237fa
 -- https://docs.snowflake.com/en/sql-reference/constructs/pivot
+-- https://medium.com/snowflake/snowflake-supports-dynamic-pivot-e6cb58b71dd9
 use snowflake_sample_data.tpch_sf1;
 
 -- ===================================================

@@ -1,10 +1,11 @@
 -- Similarity between Sets
 -- https://docs.snowflake.com/en/user-guide/querying-approximate-similarity
--- Jaccard Index (see https://en.wikipedia.org/wiki/Jaccard_index)
 
 SELECT MINHASH(100, $1)
 FROM VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
 
+-- Jaccard Index
+-- https://en.wikipedia.org/wiki/Jaccard_index
 SELECT APPROXIMATE_SIMILARITY($1)
 FROM (
     SELECT MINHASH(100, $1)

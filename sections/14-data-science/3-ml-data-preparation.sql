@@ -1,4 +1,5 @@
 -- ML Data Preparation
+-- https://docs.snowflake.com/en/user-guide/querying-time-series-data
 use test.public;
 
 -- upload WEATHER.CSV file into new WEATHER table, w/ timestamp_ntz, number, number

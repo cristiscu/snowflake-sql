@@ -1,4 +1,5 @@
 -- Time Travel
+-- https://cristian-70480.medium.com/how-to-use-time-travel-in-snowflake-the-right-way-4a0e8278058
 -- https://docs.snowflake.com/en/user-guide/data-time-travel
 use test.employees;
 

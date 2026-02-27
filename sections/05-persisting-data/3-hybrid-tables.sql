@@ -1,6 +1,7 @@
 
 -- Hybrid Tables
 -- not supported on trial accounts! (now in PuPr, some AWS regions only)
+-- https://medium.com/snowflake/all-about-the-new-snowflake-hybrid-tables-fe8d09c448e4
 -- https://docs.snowflake.com/en/user-guide/tables-hybrid
 
 create or replace hybrid table projh (

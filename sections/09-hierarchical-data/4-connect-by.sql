@@ -1,5 +1,6 @@
 -- CONNECT BY
 -- https://docs.snowflake.com/en/sql-reference/constructs/connect-by
+-- https://medium.com/@sonradata/querying-hierarchical-data-in-snowflake-ec9cbd4d4307
 use test.employees;
 
 -- 4-level hierarchy (w/ joins)

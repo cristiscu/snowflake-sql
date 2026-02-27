@@ -1,4 +1,5 @@
 -- Conditional Logic in Snowflake Scripting
+-- https://docs.snowflake.com/en/developer-guide/snowflake-scripting/branch
 
 -- create expression for the fixed department name by ID
 use test.employees;

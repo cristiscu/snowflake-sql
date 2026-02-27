@@ -1,4 +1,5 @@
 -- Grouping Sets
+-- https://community.snowflake.com/s/article/Working-with-GROUPING-SETS
 -- https://docs.snowflake.com/en/sql-reference/constructs/group-by-grouping-sets
 use test.employees;
 

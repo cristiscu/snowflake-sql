@@ -1,4 +1,5 @@
 -- Subqueries
+-- https://docs.snowflake.com/en/user-guide/querying-subqueries
 use test.employees;
 
 -- ======================================================

@@ -1,4 +1,5 @@
 -- Recursive Queries (CTEs and Views)
+-- https://cristian-70480.medium.com/how-to-query-hierarchical-data-in-snowflake-f4ac77f692cb
 use test.employees;
 
 -- recursive CTE

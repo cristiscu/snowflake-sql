@@ -1,4 +1,5 @@
 -- Zero-Copy Cloning
+-- https://medium.com/snowflake/zero-copy-cloning-in-snowflake-and-other-database-systems-b74fb3a73b3f
 -- https://docs.snowflake.com/en/user-guide/object-clone
 use test.employees;
 

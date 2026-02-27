@@ -1,3 +1,6 @@
+-- Offset Functions
+-- https://docs.snowflake.com/en/sql-reference/functions-window
+
 select name, hire_date,
     lead(salary, 1) over (order by hire_date) lead,
     salary,

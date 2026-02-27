@@ -1,5 +1,6 @@
--- Cursor and ResultSet
+-- Cursors and ResultSets
 -- https://docs.snowflake.com/en/developer-guide/snowflake-scripting/cursors
+-- https://docs.snowflake.com/en/developer-guide/snowflake-scripting/resultsets
 use test.employees;
 
 table dept;
