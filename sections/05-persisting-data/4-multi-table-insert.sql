@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/sql/insert-multi-table
+-- Multi-Table INSERT
+-- https://docs.snowflake.com/en/sql-reference/sql/insert-multi-table
 use test.employees;
 
 table dept;

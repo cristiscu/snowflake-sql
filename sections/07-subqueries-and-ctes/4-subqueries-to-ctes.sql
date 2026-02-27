@@ -1,3 +1,4 @@
+-- Subqueries to CTEs
 use test.employees;
 
 -- ======================================================

@@ -1,8 +1,9 @@
+-- Synthetic Data Generation
 USE SCHEMA test.public;
 
 -- ==============================================================
 -- Regression Data Generation
--- see https://docs.snowflake.com/en/user-guide/ml-powered-contribution-explorer#example
+-- https://docs.snowflake.com/en/user-guide/ml-powered-contribution-explorer#example
 
 CREATE OR REPLACE TABLE time_series(
     date DATE, sales NUMBER,
@@ -126,7 +127,7 @@ SELECT * FROM time_series;
 
 -- ==============================================================
 -- Classification Data Generation
--- see https://docs.snowflake.com/user-guide/snowflake-cortex/ml-functions/classification#setting-up-the-data-for-the-examples
+-- https://docs.snowflake.com/user-guide/snowflake-cortex/ml-functions/classification#setting-up-the-data-for-the-examples
 
 CREATE OR REPLACE TABLE purchases AS (
     -- train data

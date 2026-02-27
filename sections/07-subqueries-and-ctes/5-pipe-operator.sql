@@ -1,4 +1,4 @@
--- pipe operator (->>)
+-- Pipe Operator (->>)
 -- https://docs.snowflake.com/en/sql-reference/operators-flow
 use test.employees;
 

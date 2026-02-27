@@ -1,5 +1,5 @@
--- ASOF Joins: assign most recently started project compared to the hire date
--- see https://docs.snowflake.com/en/sql-reference/constructs/asof-join
+-- ASOF Joins
+-- https://docs.snowflake.com/en/sql-reference/constructs/asof-join
 
 with emp(employee, hire_date) as (
     select $1, $2::timestamp_ntz from values
@@ -28,6 +28,7 @@ proj(project, start_date, end_date) as (
     ('Model Training',        '1981-09-28',   '1982-12-10'),
     ('Model Deployment',      '1982-12-11',   null        ))
 
+-- assign most recently started project compared to the hire date
 SELECT employee, project, hire_date, start_date, end_date
 FROM emp LEFT JOIN proj ON hire_date = start_date
 -- FROM emp ASOF JOIN proj MATCH_CONDITION (hire_date >= start_date)
@@ -35,7 +36,7 @@ WHERE end_date is null or hire_date < end_date
 ORDER BY hire_date;
 
 -- ==============================================================
--- see https://duckdb.org/2023/09/15/asof-joins-fuzzy-temporal-lookups.html
+-- https://duckdb.org/2023/09/15/asof-joins-fuzzy-temporal-lookups.html
 with emp(employee, hire_date) as (
     select $1, $2::timestamp_ntz from values
     ('Steven King',       '1981-11-17'),

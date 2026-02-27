@@ -1,4 +1,5 @@
 -- ML Binary Classification
+-- https://docs.snowflake.com/en/user-guide/ml-functions/classification
 use test.public;
 
 CREATE OR REPLACE SNOWFLAKE.ML.CLASSIFICATION cls(

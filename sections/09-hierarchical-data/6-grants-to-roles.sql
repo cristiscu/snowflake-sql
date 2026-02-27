@@ -1,4 +1,6 @@
--- see https://medium.com/snowflake/the-snowflake-role-hierarchy-with-recursive-queries-c3210ac4f620
+-- GRANTS_TO_ROLES
+-- https://docs.snowflake.com/en/sql-reference/account-usage/grants_to_roles
+-- https://medium.com/snowflake/the-snowflake-role-hierarchy-with-recursive-queries-c3210ac4f620
 
 create or replace role bmo_sysadmin_role;
 create or replace role bmo_devuser_role;

@@ -1,7 +1,8 @@
--- Snowflake Scripting Blocks: duplicate returned rows from any table
--- see https://docs.snowflake.com/en/developer-guide/snowflake-scripting/index
+-- Snowflake Scripting Blocks
+-- https://docs.snowflake.com/en/developer-guide/snowflake-scripting/index
 use test.employees;
 
+-- duplicate returned rows from any table
 -- hard-coded version
 create or replace function dup_dept()
   returns table(dept_id int, name string, location string)

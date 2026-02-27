@@ -1,4 +1,5 @@
--- see https://quickstarts.snowflake.com/guide/getting_started_with_streams_and_tasks/index.html
+-- CDC w/ Streams and Tasks
+-- https://quickstarts.snowflake.com/guide/getting_started_with_streams_and_tasks/index.html
 use test.employees;
 
 -- cust_source (table) --> cust_stream (stream) --> cust_target (table)

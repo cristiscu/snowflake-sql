@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/user-guide/querying-approximate-similarity
+-- Similarity between Sets
+-- https://docs.snowflake.com/en/user-guide/querying-approximate-similarity
 -- Jaccard Index (see https://en.wikipedia.org/wiki/Jaccard_index)
 
 SELECT MINHASH(100, $1)

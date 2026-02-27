@@ -1,0 +1,2 @@
+-- Bulk File Upload
+-- https://docs.snowflake.com/en/user-guide/data-load-local-file-system

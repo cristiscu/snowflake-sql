@@ -1,3 +1,4 @@
+-- ALL BY NAME
 -- alternative to MERGE, w/ INSERT/UPDATE ALL BY NAME
 -- https://docs.snowflake.com/en/sql-reference/sql/merge#perform-a-merge-by-using-all-by-name
 use test.employees;

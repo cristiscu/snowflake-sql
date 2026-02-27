@@ -1,3 +1,6 @@
+-- NULLS FIRST/LAST
+-- https://docs.snowflake.com/en/sql-reference/constructs/order-by#label-order-by-examples-nulls
+
 -- ===============================================
 -- NULLS FIRST
 
@@ -18,7 +21,7 @@ from (values (3), (1), (null), (null), (2))
 where $1 IS NOT NULL
 order by 1);
 
--- see https://docs.snowflake.com/en/sql-reference/data-types-numeric#special-values
+-- https://docs.snowflake.com/en/sql-reference/data-types-numeric#special-values
 select ifnull($1::float, '-inf')
 from (values (3), (1), (null), (null), (2))
 order by 1;

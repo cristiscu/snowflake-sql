@@ -1,4 +1,5 @@
--- see https://medium.com/snowflake/convert-xpath-and-jsonpath-expressions-to-snowflake-queries-e34ca15bfa6b
+-- JSON Path
+-- https://medium.com/snowflake/convert-xpath-and-jsonpath-expressions-to-snowflake-queries-e34ca15bfa6b
 use test.public;
 
 create or replace table json_table(v variant) as

@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/constructs/changes
+-- CDC w/ Change Tracking
+-- https://docs.snowflake.com/en/sql-reference/constructs/changes
 use test.employees;
 
 -- source (table) --> target (table), w/ CHANGE_TRACKING

@@ -1,3 +1,6 @@
+-- Python Worksheets
+-- https://cristian-70480.medium.com/how-to-generate-snowflake-stored-procs-via-python-worksheets-01d49b5b3cb2
+
 /*
 add to new Python Worksheet
 set warehouse + test.employees

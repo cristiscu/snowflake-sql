@@ -1,5 +1,6 @@
--- see https://docs.snowflake.com/en/sql-reference/sql/select#selecting-all-columns
--- see https://medium.com/snowflake/snowflake-supports-select-ilike-replace-fc71aacd7ef1
+-- SELECT * Extensions
+-- https://docs.snowflake.com/en/sql-reference/sql/select#selecting-all-columns
+-- https://medium.com/snowflake/snowflake-supports-select-ilike-replace-fc71aacd7ef1
 use snowflake_sample_data.tpch_sf1;
 
 select *

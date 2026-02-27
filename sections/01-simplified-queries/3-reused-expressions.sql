@@ -1,4 +1,4 @@
--- see https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
+-- Reused Expressions
 use snowflake_sample_data.tpch_sf1;
 
 -- reused aliases (as intermediate expressions)

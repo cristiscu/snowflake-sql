@@ -1,3 +1,5 @@
+-- Table Constraints
+-- https://docs.snowflake.com/en/sql-reference/constraints-overview
 use test.employees;
 
 SHOW DATABASES;

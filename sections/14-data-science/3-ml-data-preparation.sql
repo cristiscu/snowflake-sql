@@ -1,4 +1,4 @@
--- ML Data Preparation: weather.csv
+-- ML Data Preparation
 use test.public;
 
 -- upload WEATHER.CSV file into new WEATHER table, w/ timestamp_ntz, number, number

@@ -1,3 +1,4 @@
+-- Recursive Queries (CTEs and Views)
 use test.employees;
 
 -- recursive CTE

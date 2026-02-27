@@ -1,5 +1,6 @@
--- see https://docs.snowflake.com/en/sql-reference/literals-table
--- see https://docs.snowflake.com/en/user-guide/sample-data-tpch
+-- Table Functions
+-- https://docs.snowflake.com/en/sql-reference/literals-table
+-- https://docs.snowflake.com/en/user-guide/sample-data-tpch
 use snowflake_sample_data.tpch_sf1;
 
 select *

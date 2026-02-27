@@ -1,3 +1,5 @@
+-- Conditional Logic in Snowflake Scripting
+
 -- create expression for the fixed department name by ID
 use test.employees;
 

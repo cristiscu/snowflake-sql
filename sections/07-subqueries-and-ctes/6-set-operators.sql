@@ -1,3 +1,5 @@
+-- Set Operators
+-- https://docs.snowflake.com/en/sql-reference/operators-query
 use test.employees;
 
 select name, status, salary

@@ -1,3 +1,6 @@
+-- Cortex LLM Functions
+-- https://docs.snowflake.com/en/user-guide/snowflake-cortex/aisql
+
 SET review = $$
 I've been a customer for less than a year and I have never
 had to visit a branch this much in my lifetime.

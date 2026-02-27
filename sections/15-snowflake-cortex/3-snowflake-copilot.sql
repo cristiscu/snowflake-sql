@@ -1,3 +1,5 @@
+-- Snowflake Copilot
+-- https://docs.snowflake.com/en/user-guide/snowflake-copilot
 use test.employees;
 
 select * from emp;

@@ -1,3 +1,5 @@
+-- CONNECT BY
+-- https://docs.snowflake.com/en/sql-reference/constructs/connect-by
 use test.employees;
 
 -- 4-level hierarchy (w/ joins)

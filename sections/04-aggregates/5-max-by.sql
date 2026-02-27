@@ -1,5 +1,5 @@
--- MAX/MIN_BY: get first order (no duplicates)/first N orders with max price per priority status
--- see https://docs.snowflake.com/en/sql-reference/functions/max_by
+-- MAX/MIN_BY
+-- https://docs.snowflake.com/en/sql-reference/functions/max_by
 use snowflake_sample_data.tpch_sf1;
 
 -- distinct category values

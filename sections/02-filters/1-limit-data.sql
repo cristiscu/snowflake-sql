@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/constructs/limit
+-- Limiting Returned Data
+-- https://docs.snowflake.com/en/sql-reference/constructs/limit
 
 select $1
 from values (1), (2), (3), (4), (5);

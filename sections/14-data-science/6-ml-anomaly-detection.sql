@@ -1,4 +1,5 @@
 -- ML Anomaly Detection
+-- https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection
 use test.public;
 
 -- unlabeled/unsupervized

@@ -1,0 +1,2 @@
+-- Cortex Analyst
+-- https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst

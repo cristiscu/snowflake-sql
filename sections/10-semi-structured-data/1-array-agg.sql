@@ -1,3 +1,5 @@
+-- Array Aggregation
+-- https://docs.snowflake.com/en/sql-reference/functions/array_agg
 use test.employees;
 
 -- aggregate (create array of employee names, denormalized)

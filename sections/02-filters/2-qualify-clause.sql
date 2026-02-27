@@ -1,4 +1,5 @@
--- see https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
+-- QUALIFY Clause
+-- https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
 
 select name
 from (values ('apples'), ('oranges'), ('nuts')) as fruits(name)

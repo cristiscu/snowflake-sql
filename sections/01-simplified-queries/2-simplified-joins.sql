@@ -1,3 +1,5 @@
+-- Simplified Joins
+
 use snowflake_sample_data.tpch_sf1;
 
 -- no required ON (could use WHERE instead)

@@ -1,3 +1,5 @@
+-- Nested Transactions
+-- https://docs.snowflake.com/en/sql-reference/transactions
 use test.employees;
 
 create or replace table log(msg string not null);

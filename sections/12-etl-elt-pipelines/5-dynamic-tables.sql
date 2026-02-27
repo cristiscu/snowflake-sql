@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/sql/create-dynamic-table
+-- Dynamic Tables
+-- https://docs.snowflake.com/en/sql-reference/sql/create-dynamic-table
 use test.employees;
 
 -- source (table) --> target (dynamic table)

@@ -1,5 +1,6 @@
--- Object Dependencies: show all obj deps in account (can get a lot of data!)
+-- Object Dependencies
 
+-- show all obj deps in account (can get a lot of data!)
 select * 
 from snowflake.account_usage.object_dependencies;
 

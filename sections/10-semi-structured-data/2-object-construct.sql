@@ -1,3 +1,5 @@
+-- Object Construction
+-- https://docs.snowflake.com/en/sql-reference/functions/object_construct
 use test.employees;
 
 table emp;

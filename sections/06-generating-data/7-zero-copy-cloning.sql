@@ -1,3 +1,5 @@
+-- Zero-Copy Cloning
+-- https://docs.snowflake.com/en/user-guide/object-clone
 use test.employees;
 
 select * from dept;

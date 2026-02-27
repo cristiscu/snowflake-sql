@@ -1,3 +1,5 @@
+-- GREATEST/LEAST Functions
+-- https://docs.snowflake.com/en/sql-reference/functions/greatest
 use test.employees;
 
 select max(salary), max(commission),

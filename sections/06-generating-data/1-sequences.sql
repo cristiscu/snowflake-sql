@@ -1,5 +1,6 @@
--- see https://docs.snowflake.com/en/user-guide/querying-sequences
--- see https://community.snowflake.com/s/article/Why-does-a-gap-occur-on-identity-columns
+-- Sequences and Identity Columns
+-- https://docs.snowflake.com/en/user-guide/querying-sequences
+-- https://community.snowflake.com/s/article/Why-does-a-gap-occur-on-identity-columns
 use test.employees;
 
 -- =========================================================

@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/functions/parse_xml
+-- XML Parsing
+-- https://docs.snowflake.com/en/sql-reference/functions/parse_xml
 use test.public;
 
 select check_xml(
@@ -88,7 +89,7 @@ select GET(XMLGET(XMLGET(XMLGET(v, 'store'), 'book', 2), 'author'), '$')::string
 from xml_table;
 
 -- ==============================================================
--- see https://stackoverflow.com/questions/71102368/flatten-xml-array-to-a-single-row-in-snowflake
+-- https://stackoverflow.com/questions/71102368/flatten-xml-array-to-a-single-row-in-snowflake
 
 -- flatten all 'book' XML objects
 SELECT s.value

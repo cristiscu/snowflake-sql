@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/developer-guide/udf/sql/udf-sql-tabular-functions
+-- Tabular SQL UDFs (UDTFs)
+-- https://docs.snowflake.com/en/developer-guide/udf/sql/udf-sql-tabular-functions
 use test.employees;
 
 -- UDTF in SQL
@@ -15,7 +16,7 @@ from dept d, lateral get_employee_names(d.dept_id) e
 order by 1, 2;
 
 -- built-in UDTFs
--- see https://docs.snowflake.com/en/sql-reference/functions-table
+-- https://docs.snowflake.com/en/sql-reference/functions-table
 -- built-in table functions
 show tables;
 select "database_name" || '.' || "schema_name" || '.' || "name" as obj 

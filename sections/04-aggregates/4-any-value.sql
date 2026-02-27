@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/functions/any_value
+-- ANY_VALUE
+-- https://docs.snowflake.com/en/sql-reference/functions/any_value
 use snowflake_sample_data.tpch_sf1;
 
 select n_nationkey,

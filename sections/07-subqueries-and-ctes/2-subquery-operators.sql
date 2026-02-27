@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/operators-subquery
+-- Subquery Operators
+-- https://docs.snowflake.com/en/sql-reference/operators-subquery
 use test.employees;
 
 -- ==========================================================

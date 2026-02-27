@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/constructs/pivot
+-- PIVOT Queries
+-- https://docs.snowflake.com/en/sql-reference/constructs/pivot
 use snowflake_sample_data.tpch_sf1;
 
 -- ===================================================

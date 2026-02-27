@@ -1,4 +1,5 @@
--- see https://medium.com/snowflake/understanding-the-exploding-joins-problem-in-snowflake-6b4f89f006c7
+-- "Exploding" Joins
+-- https://medium.com/snowflake/understanding-the-exploding-joins-problem-in-snowflake-6b4f89f006c7
 use snowflake_sample_data.tpch_sf1;
 
 ALTER SESSION SET USE_CACHED_RESULT = FALSE;

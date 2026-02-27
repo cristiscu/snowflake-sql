@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/functions/count_if
+-- COUNT_IF
+-- https://docs.snowflake.com/en/sql-reference/functions/count_if
 use snowflake_sample_data.tpch_sf1;
 
 select *

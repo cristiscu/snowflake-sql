@@ -1,6 +1,7 @@
--- variable-depth hierarchy: employee --> manager
+-- Variable-Depth Hierarchies
 use test.employees;
 
+-- employee --> manager
 create or replace view employee_manager as
     select e.name as employee, m.name as manager 
     from emp e left join emp m on e.mgr_id = m.emp_id;

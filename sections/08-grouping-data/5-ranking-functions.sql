@@ -1,3 +1,6 @@
+-- Ranking Functions
+-- https://docs.snowflake.com/en/sql-reference/functions-window
+
 select dept_id, name,
     row_number() over (order by dept_id) row_number,
     rank() over (order by dept_id) rank,

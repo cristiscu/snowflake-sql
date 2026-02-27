@@ -1,8 +1,9 @@
+-- CTEs (Common Table Expressions)
 use test.employees;
 
 -- =======================================================
 -- CTEs as macros
--- see https://www.linkedin.com/posts/anton-revyako_snowflake-sql-activity-7193593986303873025-2eVs/?utm_source=share&utm_medium=member_desktop
+-- https://www.linkedin.com/posts/anton-revyako_snowflake-sql-activity-7193593986303873025-2eVs/?utm_source=share&utm_medium=member_desktop
 
 select *
 from dept
@@ -28,7 +29,7 @@ select cte:metric;
 
 -- =======================================================
 -- CTEs from complex query
--- see https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
+-- https://medium.com/snowflake/how-qualify-works-with-in-depth-explanation-and-examples-bbde9fc742db
 
 select distinct fruits.name, sum(sales.quantity) as sold
 from (values ('apples', 100), ('oranges', 50),

@@ -1,3 +1,6 @@
+-- Regular Expressions
+-- https://docs.snowflake.com/en/sql-reference/functions-regexp
+
 set s = 'It is cold and the OLD MAN wants to sleep, before the soldiers arrive.';
 
 select $s LIKE '\\%\\_old\\%' ESCAPE '\\',

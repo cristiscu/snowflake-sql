@@ -1,3 +1,5 @@
+-- Time Travel
+-- https://docs.snowflake.com/en/user-guide/data-time-travel
 use test.employees;
 
 select * from dept;

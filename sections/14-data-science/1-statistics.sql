@@ -1,3 +1,4 @@
+-- Statistics in Snowflake
 use snowflake_sample_data.tpch_sf1;
 
 select l_extendedprice

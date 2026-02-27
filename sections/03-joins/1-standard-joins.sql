@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/constructs/join
+-- Standard Joins
+-- https://docs.snowflake.com/en/sql-reference/constructs/join
 
 /*
 country --> city - 1-N relationship

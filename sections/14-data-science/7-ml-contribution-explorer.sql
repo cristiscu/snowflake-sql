@@ -1,4 +1,5 @@
 -- ML Contribution Explorer
+-- https://docs.snowflake.com/en/user-guide/ml-functions/top-insights
 use test.public;
 
 SELECT

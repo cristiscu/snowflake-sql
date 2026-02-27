@@ -1,5 +1,8 @@
+-- Geospatial Data Types
+-- https://docs.snowflake.com/en/sql-reference/data-types-geospatial
+
 -- GET "OpenStreetMap New York" dataset (from Sonra) for free from the Marketplace
--- see https://app.snowflake.com/marketplace/listing/GZSVZ3XQXH/sonra-openstreetmap-new-york
+-- https://app.snowflake.com/marketplace/listing/GZSVZ3XQXH/sonra-openstreetmap-new-york
 USE OPENSTREETMAP_NEW_YORK.NEW_YORK;
 
 // Give me the length of a Way

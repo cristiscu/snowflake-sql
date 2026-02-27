@@ -1,6 +1,6 @@
 -- COUNT(DISTINCT expr) vs ARRAY_SIZE(ARRAY_UNIQUE_AGG(expr))
 -- could be faster for multiple GROUPING SETS/ROLLUP/CUBE
--- see https://docs.snowflake.com/en/user-guide/querying-arrays-for-distinct-counts
+-- https://docs.snowflake.com/en/user-guide/querying-arrays-for-distinct-counts
 use SNOWFLAKE_SAMPLE_DATA.TPCH_SF1000;
 
 -- ============================================================

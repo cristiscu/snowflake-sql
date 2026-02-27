@@ -1,4 +1,4 @@
--- Dynamic tables with immutability constraints
+-- Dynamic Tables with Immutability Constraints
 -- https://www.snowflake.com/en/engineering-blog/dynamic-tables-immutability/
 -- https://docs.snowflake.com/en/user-guide/dynamic-tables-immutability-constraints
 use test.employees;

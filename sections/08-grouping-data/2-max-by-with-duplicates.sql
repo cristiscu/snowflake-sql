@@ -1,5 +1,5 @@
--- MAX/MIN_BY: get first employee (with duplicates!)/first N employees with max salary per department
--- see https://docs.snowflake.com/en/sql-reference/functions/max_by
+-- MAX_BY/MIN_BY
+-- https://docs.snowflake.com/en/sql-reference/functions/max_by
 use test.employees;
 
 -- first employee (in alphabetical order!) with biggest salary per department

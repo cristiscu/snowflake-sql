@@ -1,3 +1,5 @@
+-- SQL Simplified
+
 -- no FROM dual
 select 1, current_timestamp(), current_timestamp;
 

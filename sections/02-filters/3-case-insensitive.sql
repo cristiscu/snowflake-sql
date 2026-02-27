@@ -1,3 +1,5 @@
+-- Case Sensitive/Insensitive Queries
+
 -- =================================================
 -- ORDER BY case sensitivity
 
@@ -16,7 +18,7 @@ from (values ('abc'), ('aBc'), ('acd'))
 order by lower($1);
 
 -- deterministic results: abc, aBc, acd
--- see https://docs.snowflake.com/en/sql-reference/functions/collate
+-- https://docs.snowflake.com/en/sql-reference/functions/collate
 select *
 from (values ('abc'), ('aBc'), ('acd'))
 order by COLLATE($1, 'en');

@@ -1,6 +1,7 @@
--- fixed-depth hierarchy: company --> departments --> employees
+-- Fixed-Depth Hierarchies
 use test.employees;
 
+-- company --> departments --> employees
 create or replace view department_employees as
     select '(company)' as child, null as parent
     union

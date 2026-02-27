@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/developer-guide/snowpark/python/creating-udafs
+-- User-Defined Aggregate Functions (UDAFs)
+-- https://docs.snowflake.com/en/developer-guide/snowpark/python/creating-udafs
 use test.employees;
 
 -- SUM: w/ single parameter

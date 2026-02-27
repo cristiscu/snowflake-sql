@@ -1,3 +1,5 @@
+-- String Tokens
+
 select parse_ip('26.11.98.128', 'cidr'),
     parse_url('https://docs.snowflake.com/en/sql-reference');
 

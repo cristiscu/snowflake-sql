@@ -1,4 +1,8 @@
+-- Higher-Order Functions
+-- https://docs.snowflake.com/en/user-guide/querying-semistructured#label-higher-order-functions
+
 select transform([1, 2, 3], a INT -> a * 2);
+select filter([1, 2, 3], a INT -> a >= 2);
 
 select transform([
     {'label':'a', 'value':1},
@@ -19,6 +23,16 @@ select transform(
         {'label':'c', 'value':3}
     ], a -> a:value >=2),
     a -> object_insert(a, 'new', {'value2':a:value * 2}));
+
+-- ======================================================
+-- REDUCE
+-- https://www.snowflake.com/en/engineering-blog/reduce-function-simplify-array-processing/
+select reduce([1, 2, 3], 0, (acc INT, a INT) -> acc + a);
+select reduce([1, 2, 3], [], (acc, a) -> ARRAY_PREPEND(acc, a)) AS reverse;
+
+select reduce(v.value, 1, (acc, a) -> acc * a)
+from table(flatten(input => 
+    array_construct([1, 2, 3], [4, 5, 6], [7, 8, 9]))) as v;
 
 -- ======================================================
 use test.employees;

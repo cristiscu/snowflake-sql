@@ -1,6 +1,7 @@
 
--- see https://docs.snowflake.com/en/user-guide/tables-hybrid
+-- Hybrid Tables
 -- not supported on trial accounts! (now in PuPr, some AWS regions only)
+-- https://docs.snowflake.com/en/user-guide/tables-hybrid
 
 create or replace hybrid table projh (
 	proj_id     integer     PRIMARY KEY,

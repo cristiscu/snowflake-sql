@@ -1,3 +1,4 @@
+-- Permanent Tables in Snowflake
 -- (re)create TEST database and schema
 drop database if exists test;
 create or replace database test;

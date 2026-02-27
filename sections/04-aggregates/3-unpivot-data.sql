@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/constructs/unpivot
+-- UNPIVOT Queries
+-- https://docs.snowflake.com/en/sql-reference/constructs/unpivot
 use snowflake_sample_data.tpch_sf1;
 
 -- ===================================================

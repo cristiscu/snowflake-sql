@@ -1,10 +1,11 @@
--- Cursor and ResultSet: multi-table insert
--- see https://docs.snowflake.com/en/developer-guide/snowflake-scripting/cursors
+-- Cursor and ResultSet
+-- https://docs.snowflake.com/en/developer-guide/snowflake-scripting/cursors
 use test.employees;
 
 table dept;
 table emp;
 
+-- for multi-table insert
 -- need to create separate tables w/ employees for each department
 CREATE OR REPLACE TABLE emp_Accounting AS
     SELECT * EXCLUDE dept_id FROM emp

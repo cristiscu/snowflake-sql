@@ -1,4 +1,5 @@
 -- ML Forecasting
+-- https://docs.snowflake.com/en/user-guide/ml-functions/forecasting
 use test.public;
 
 create or replace snowflake.ml.forecast fcast(

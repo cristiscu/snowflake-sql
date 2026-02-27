@@ -1,4 +1,5 @@
--- see https://das42.com/thought-leadership/fuzzy-matching-in-snowflake/
+-- Fuzzy Matching
+-- https://das42.com/thought-leadership/fuzzy-matching-in-snowflake/
 use snowflake_sample_data.tpch_sf1;
 
 select distinct n_name

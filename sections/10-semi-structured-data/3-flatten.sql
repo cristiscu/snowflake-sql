@@ -1,8 +1,9 @@
--- Data Lineage: show all access history in the account (can get a lot of data!)
-
+-- FLATTEN
+-- https://docs.snowflake.com/en/sql-reference/functions/flatten 
 select *
 from snowflake.account_usage.access_history;
 
+-- Data Lineage: show all access history in the account (can get a lot of data!)
 -- one-level flatten
 select base_objects_accessed boa,
     t.value, t.index

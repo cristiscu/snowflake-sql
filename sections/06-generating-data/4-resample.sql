@@ -1,0 +1,3 @@
+-- RESAMPLE for time series, w/ INTERPOLATE_ window functions
+-- https://www.snowflake.com/en/engineering-blog/new-sql-features-public-preview/
+-- https://docs.snowflake.com/en/sql-reference/functions/interpolate_bfill 

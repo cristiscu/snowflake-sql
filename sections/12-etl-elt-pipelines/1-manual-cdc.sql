@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/sql/merge
+-- Manual CDC (Change Data Capture)
+-- https://docs.snowflake.com/en/sql-reference/sql/merge
 use test.employees;
 
 -- source (table) --> target (table), w/ MERGE in stored proc

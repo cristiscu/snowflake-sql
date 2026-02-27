@@ -1,3 +1,5 @@
+-- LATERAL Join
+-- https://docs.snowflake.com/en/user-guide/lateral-join-using
 use snowflake_sample_data.tpch_sf1;
 
 select n_name, (

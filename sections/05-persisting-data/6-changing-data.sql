@@ -1,4 +1,5 @@
--- see https://docs.snowflake.com/en/sql-reference/sql/update#usage-notes
+-- Changing Data (DML, CRUD operations)
+-- https://docs.snowflake.com/en/sql-reference/sql/update#usage-notes
 use test.employees;
 
 select * from dept;
@@ -24,7 +25,7 @@ show parameters
 -- set ERROR_ON_NONDETERMINISTIC_UPDATE = TRUE;
 ALTER SESSION SET ERROR_ON_NONDETERMINISTIC_UPDATE = TRUE;
 
--- see https://docs.snowflake.com/en/sql-reference/sql/update#usage-notes
+-- https://docs.snowflake.com/en/sql-reference/sql/update#usage-notes
 use test.employees;
 
 select * from dept;
