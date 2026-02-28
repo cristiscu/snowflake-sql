@@ -96,7 +96,6 @@ I used number prefixes to make it easier to locate both the section and the lect
 * Parse JSON Hierarchies
 * Higher-Order Functions
 * String Lists vs Arrays
-* Geography and Geometry Data Types
 * Parsing XML Data
 
 11. **Procedures and Functions**
@@ -134,6 +133,6 @@ I used number prefixes to make it easier to locate both the section and the lect
 * Snowflake Cortex LLM Functions
 * Snowflake Cortex AISQL Functions
 * Query Generation with Snowflake Copilot
-* Query Generation with Cortex Analyst
+* Cortex Analyst with Semantic Views
 * Vector Embeddings
 
