@@ -5,3 +5,5 @@
 *.conf
 *.pkl
 *.joblib
+
+.etc/*
