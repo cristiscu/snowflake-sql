@@ -1,5 +1,5 @@
 -- TABLE vs LATERAL
--- https://docs.snowflake.com/en/sql-reference/literals-table
+-- https://docs.snowflake.com/en/sql-reference/functions/flatten#examples
 use snowflake_sample_data.tpch_sf1;
 
 select ah.query_id, ah.objects_modified oms, om.value

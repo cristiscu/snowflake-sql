@@ -3,7 +3,7 @@ USE SCHEMA test.public;
 
 -- ==============================================================
 -- Regression Data Generation
--- https://docs.snowflake.com/en/user-guide/ml-powered-contribution-explorer#example
+-- https://docs.snowflake.com/en/user-guide/ml-functions/top-insights#time-series-analysis-example
 
 CREATE OR REPLACE TABLE time_series(
     date DATE, sales NUMBER,

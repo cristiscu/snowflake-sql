@@ -1,5 +1,6 @@
 -- ML Contribution Explorer
 -- https://docs.snowflake.com/en/user-guide/ml-functions/top-insights
+-- https://cristian-70480.medium.com/why-snowflakes-top-insights-is-not-related-to-time-series-2d954c9f67ae
 use test.public;
 
 SELECT

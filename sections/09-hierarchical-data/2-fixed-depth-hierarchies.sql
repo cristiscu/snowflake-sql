@@ -1,4 +1,5 @@
 -- Fixed-Depth Hierarchies
+-- https://medium.com/snowflake/how-to-easily-visualize-hierarchical-tabular-data-90f97e5e4168
 use test.employees;
 
 -- company --> departments --> employees

@@ -1,4 +1,5 @@
 -- Offset Functions
+-- https://medium.com/snowflake/offset-window-functions-in-snowflake-the-easy-way-82a3c10fb305
 -- https://docs.snowflake.com/en/sql-reference/functions-window
 
 select name, hire_date,
