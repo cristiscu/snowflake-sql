@@ -1,6 +1,10 @@
 -- Window Function Frames
 -- https://docs.snowflake.com/en/sql-reference/functions-window-syntax#usage-notes-for-window-frames
-use schema test.employees;
+use test.employees;
+
+select name, hire_date, salary
+from emp
+order by hire_date;
 
 -- window frame (--> moving average)
 select name, hire_date, salary,
