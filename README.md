@@ -24,7 +24,7 @@ I used number prefixes to make it easier to locate both the section and the lect
 * Filter Window Functions with QUALIFY
 * Case Insensitive Queries
 * Regular Expressions
-* Patterns with Match Recognize
+* Patterns with MATCH_RECOGNIZE
 * Full-Text SEARCH
 * Sort with NULLS FIRST/LAST
 
@@ -53,9 +53,10 @@ I used number prefixes to make it easier to locate both the section and the lect
 * Changing Persisted Data
 
 6. **Generating Data**
-* Synthetic Data Generation
 * Sequences and Identity Columns
+* Synthetic Data Generation
 * SAMPLE Data Extraction
+* RESAMPLE for Time Series
 * Generate Similar Table Data
 * Time Travel and Fail Safe
 * Zero-Copy Cloning
@@ -74,7 +75,7 @@ I used number prefixes to make it easier to locate both the section and the lect
 * Duplicate and Distinct Values
 * MIN_BY and MAX_BY with Duplicates
 * Grouping Sets
-* OVER and WINDOW Clauses
+* OVER Clause
 * Ranking Window Functions
 * Offset Window Functions
 * Window Function Frames
@@ -92,10 +93,10 @@ I used number prefixes to make it easier to locate both the section and the lect
 * Array Aggregations
 * Object Dictionaries
 * FLATTEN Arrays
-* Expand Array Operator (**)
 * Parse JSON Hierarchies
 * Higher-Order Functions
 * String Lists vs Arrays
+* Expansion Spread Operator (**)
 * Parsing XML Data
 
 11. **Procedures and Functions**
